@@ -33,10 +33,12 @@ CATEGORY_INDEX = label_map_util.create_category_index(categories)
 MODEL_NAME = 'output_inference_graph'
 PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
 
+
 def load_image_into_numpy_array(image):
     (im_width, im_height) = image.size
     return np.array(image.getdata()).reshape(
         (im_height, im_width, 3)).astype(np.uint8)
+
 
 def detect_objects(image_path):
     image = Image.open(image_path)
